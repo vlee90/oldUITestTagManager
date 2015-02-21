@@ -21,23 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"HI");
+    TAGDataLayer *dataLayer = [TAGManager instance].dataLayer;
+    [dataLayer push:@{@"event" : @"screenLoads",
+                      @"screenName": @"Home Screen"}];
 }
-
-//-(void)viewDidAppear:(BOOL)animated {
-//    [self viewDidAppear:animated];
-//    TAGDataLayer *dataLayer = [TAGManager instance].dataLayer;
-//    [dataLayer push:@{@"event" : @"screenLoads",
-//                      @"screenName": @"Home Screen"}];
-//}
 
 - (IBAction)eventButtonPressed:(id)sender {
     NSLog(@"Button Pressed");
     TAGDataLayer *dataLayer = [TAGManager instance].dataLayer;
-//    [dataLayer push:@{@"event" : @"eventButtonPressed"}];
-    [dataLayer push:@{@"event" : @"screenLoads",
-                      @"screenName": @"Home Screen"}];
-
+    [dataLayer push:@{@"event" : @"eventButtonPressed"}];
 }
 
 
