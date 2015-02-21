@@ -27,12 +27,15 @@
                                    openType:kTAGOpenTypePreferFresh
                                     timeout:nil
                                    notifier:self];
+    NSTimeInterval dispatchTime = 10;
+    self.tagManager.dispatchInterval = dispatchTime;
     return YES;
 }
 
 -(void)containerAvailable:(TAGContainer *)container {
     dispatch_async(dispatch_get_main_queue(), ^{
         self.container = container;
+        [self.container refresh];
     });
 }
 

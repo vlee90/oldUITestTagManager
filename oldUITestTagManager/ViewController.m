@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
+#import "TAGDataLayer.h"
+#import "TAGManager.h"
 
 @interface ViewController ()
 
@@ -18,10 +21,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"HI");
 }
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self viewDidAppear:animated];
+    TAGDataLayer *dataLayer = [TAGManager instance].dataLayer;
+    [dataLayer push:@{@"event" : @"screenLoads",
+                      @"screenName": @"Home Screen"}];
+}
+
 - (IBAction)eventButtonPressed:(id)sender {
-    
+    NSLog(@"Button Pressed");
+    TAGDataLayer *dataLayer = [TAGManager instance].dataLayer;
+    [dataLayer push:@{@"event" : @"eventButtonPressed"}];
+//    [dataLayer pushValue:@"event" forKey:@"eventButtonPressed"];
 }
 
 
