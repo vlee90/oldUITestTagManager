@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "TAGContainer.h"
+#import "TAGContainerOpener.h"
+#import "TAGManager.h"
 
-@interface AppDelegate ()
+
+@interface AppDelegate ()<TAGContainerOpenerNotifier>
 
 @end
 
@@ -16,8 +20,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    self.tagManager = [TAGManager instance];
+    [self.tagManager.logger setLogLevel:kTAGLoggerLogLevelVerbose];
+    [TAGContainerOpener openContainerWithId:@"GTM-TTKFS9"
+                                 tagManager:self.tagManager
+                                   openType:kTAGOpenTypePreferFresh
+                                    timeout:nil
+                                   notifier:self];
     return YES;
+}
+
+-(void)containerAvailable:(TAGContainer *)container {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.container = container;
+    });
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

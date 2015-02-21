@@ -52,6 +52,11 @@
 		EBD3407F1A99394000AA76ED /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EBD340811A99395300AA76ED /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = ../../../Downloads/GoogleAnalyticsServicesiOS_3.10/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		EBD340831A993A5800AA76ED /* GTM-TTKFS9 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GTM-TTKFS9"; path = "../../../../Downloads/GTM-TTKFS9"; sourceTree = "<group>"; };
+		EBD340861A993AC700AA76ED /* TAGContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGContainer.h; sourceTree = "<group>"; };
+		EBD340871A993AC700AA76ED /* TAGContainerOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGContainerOpener.h; sourceTree = "<group>"; };
+		EBD340881A993AC700AA76ED /* TAGDataLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGDataLayer.h; sourceTree = "<group>"; };
+		EBD340891A993AC700AA76ED /* TAGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGLogger.h; sourceTree = "<group>"; };
+		EBD3408A1A993AC700AA76ED /* TAGManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,7 @@
 		EBD340531A9937B000AA76ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EBD340851A993AC700AA76ED /* Library */,
 				EBD340831A993A5800AA76ED /* GTM-TTKFS9 */,
 				EBD340541A9937B000AA76ED /* Info.plist */,
 				EBD340551A9937B000AA76ED /* main.m */,
@@ -140,6 +146,19 @@
 				EBD3406E1A9937B000AA76ED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBD340851A993AC700AA76ED /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EBD340861A993AC700AA76ED /* TAGContainer.h */,
+				EBD340871A993AC700AA76ED /* TAGContainerOpener.h */,
+				EBD340881A993AC700AA76ED /* TAGDataLayer.h */,
+				EBD340891A993AC700AA76ED /* TAGLogger.h */,
+				EBD3408A1A993AC700AA76ED /* TAGManager.h */,
+			);
+			name = Library;
+			path = ../../../../Downloads/GoogleAnalyticsServicesiOS_3.10/GoogleTagManager/Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
